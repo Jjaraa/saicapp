@@ -1,16 +1,16 @@
+import { useState, useEffect } from 'react'
 import { Box, Image, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import Logo from '../../../assets/logo.svg'
-import { supabase } from '../../utils/SupabaseClient'
-
-async function signInWithGoogle () {
-  const { user, session, error } = await supabase.auth.signIn({
-    provider: 'google'
-  })
-  console.log(user, session, error)
-}
+import { signInWithGoogle, signout, getSession } from '../../utils/Auth'
 
 function Navbar () {
+  const [session, setSession] = useState('')
+
+  useEffect(() => {
+    getSession().then(result => setSession(result))
+  }, [])
+
   return (
     <>
       <header>
@@ -27,14 +27,34 @@ function Navbar () {
             </Link>
           </Box>
           <Box>
+            {
+              session === ''
+                ? (
+                  <Button
+                    mr={2}
+                    fontSize='sm'
+                    onClick={() => signInWithGoogle()}
+                  >
+                    Iniciar sesión
+                  </Button>
+                  )
+                : (
+                  <Button
+                    mr={2}
+                    fontSize='sm'
+                    onClick={() => {
+                      signout()
+                      setSession('')
+                    }}
+                  >
+                    Cerrar Sesión
+                  </Button>
+                  )
+            }
             <Button
-              mr={2}
               fontSize='sm'
-              onClick={() => signInWithGoogle()}
+              onClick={() => console.log(getSession())}
             >
-              Iniciar sesión
-            </Button>
-            <Button fontSize='sm'>
               Registrarse
             </Button>
           </Box>
