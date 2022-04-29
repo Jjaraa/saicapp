@@ -28,7 +28,7 @@ function Navbar () {
           </Box>
           <Box>
             {
-              session === ''
+              session !== ''
                 ? (
                   <Button
                     mr={2}
