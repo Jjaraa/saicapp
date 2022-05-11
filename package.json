@@ -25,6 +25,11 @@
     "vite": "^2.9.5"
   },
   "eslintConfig": {
-    "extends": "./node_modules/standard/eslintrc.json"
+    "extends": "./node_modules/standard/eslintrc.json",
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    }
   }
 }
