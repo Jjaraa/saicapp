@@ -81,7 +81,7 @@ function Navbar () {
           <ModalHeader>Beta cerrada</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text fontSize='2xl' align='center'>Por el momento SAIC se encuentra en beta cerrada :(</Text>
+            <Text fontSize='lg' align='center'>Por el momento SAIC se encuentra en beta cerrada :(</Text>
             <Text marginTop='15px'>Se abrirá el proceso de creación de cuentas pronto!</Text>
           </ModalBody>
 
