@@ -16,7 +16,7 @@ function App () {
   return (
     <Box
       h={screen.height}
-      w={screen.width}
+      w='100%'
       backgroundColor='#f3eefe'
     >
       <div className='App'>
