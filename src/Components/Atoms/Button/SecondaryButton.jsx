@@ -4,7 +4,8 @@ function SecundaryButton (props) {
   return (
     <Button
       {...props}
-      colorScheme='green'
+      colorScheme='purple'
+      variant='ghost'
     >
       {props.children}
     </Button>
