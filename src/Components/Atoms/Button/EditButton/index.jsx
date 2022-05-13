@@ -5,10 +5,10 @@ function EditButton (props) {
   return (
     <Button
       {...props}
-      leftIcon={
-        <Image src={EditIcon} alt='edit' />
-    }
-    />
+      size='xs'
+    >
+      <Image src={EditIcon} boxSize='100%' alt='edit' />
+    </Button>
   )
 }
 

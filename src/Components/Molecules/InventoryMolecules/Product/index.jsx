@@ -1,8 +1,10 @@
 import {
+  Flex,
   Tr,
   Td
 } from '@chakra-ui/react'
 import { EditButton } from '../../../Atoms/Button/EditButton'
+import { DeleteButton } from '../../../Atoms/Button/DeleteButton'
 
 function Product ({ product }) {
   return (
@@ -14,7 +16,10 @@ function Product ({ product }) {
       <Td isNumeric>{product.pricePackage}</Td>
       <Td isNumeric>{product.priceUnit}</Td>
       <Td>
-        <EditButton />
+        <Flex gap={2}>
+          <EditButton />
+          <DeleteButton />
+        </Flex>
       </Td>
     </Tr>
   )
