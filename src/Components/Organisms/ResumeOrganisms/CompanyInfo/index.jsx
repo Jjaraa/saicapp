@@ -20,10 +20,10 @@ const feedCompany = {
 function CompanyInfo () {
   const [isEditing, setIsEditing] = useState(false)
   const [company, setCompany] = useState(feedCompany)
-  const [newCompany, setNewCompany] = useState({})
+  const [editedCompany, setEditedCompany] = useState(company)
 
   function handleCallback (_company) {
-    setNewCompany(_company)
+    setEditedCompany(_company)
   }
 
   return (
@@ -34,9 +34,14 @@ function CompanyInfo () {
           {
             isEditing
               ? <>
-                <SecondaryButton onClick={() => setIsEditing(false)}>Cancelar</SecondaryButton>
+                <SecondaryButton onClick={() => {
+                  setEditedCompany(company)
+                  setIsEditing(false)
+                }}
+                >Cancelar
+                </SecondaryButton>
                 <PrimaryButton onClick={() => {
-                  setCompany(newCompany)
+                  setCompany(editedCompany)
                   setIsEditing(false)
                 }}
                 >Guardar
@@ -48,7 +53,7 @@ function CompanyInfo () {
       </Flex>
       {
         isEditing
-          ? <CompanyEditArea company={company} handleCallback={handleCallback} />
+          ? <CompanyEditArea company={editedCompany} handleCallback={handleCallback} />
           : <CompanyInfoArea company={company} />
       }
     </Box>
