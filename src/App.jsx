@@ -11,6 +11,9 @@ function App () {
     if (location.pathname === '/') {
       navigate('/home')
     }
+    if (location.pathname === '/dashboard') {
+      navigate('/dashboard/resumen')
+    }
   }, [])
 
   return (
