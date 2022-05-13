@@ -6,7 +6,7 @@ import {
   Center
 } from '@chakra-ui/react'
 import { PrimaryButton } from '../Components/Atoms/Button/PrimaryButton'
-import githubIcon from '../../assets/icons/SocialIcons/github.svg'
+import githubIcon from '../../assets/Icons/SocialIcons/github.svg'
 
 function Home () {
   return (

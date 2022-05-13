@@ -1,5 +1,5 @@
 import { Button, Image } from '@chakra-ui/react'
-import EditIcon from '../../../../../assets/icons/ButtonIcons/edit.svg'
+import EditIcon from '../../../../../assets/Icons/ButtonIcons/edit.svg'
 
 function EditButton (props) {
   return (
