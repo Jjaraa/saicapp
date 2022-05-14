@@ -5,7 +5,7 @@ function EditButton (props) {
   return (
     <Button
       {...props}
-      size='xs'
+      boxSize='50px'
     >
       <Image src={EditIcon} boxSize='100%' alt='edit' />
     </Button>

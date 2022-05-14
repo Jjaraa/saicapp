@@ -5,7 +5,7 @@ function DeleteButton (props) {
   return (
     <Button
       {...props}
-      size='xs'
+      boxSize='50px'
     >
       <Image src={DeleteIcon} boxSize='100%' alt='delete' />
     </Button>
